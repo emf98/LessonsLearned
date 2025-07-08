@@ -1,0 +1,11 @@
+7/8/2025
+
+I created this repo to show my work from the Lessons Learned paper/play around a little bit with some different data.
+The OG data only covers Nov-Mar, 1959/1960 to 2020/2021.
+I changed it to extend to Oct-Mar for the normalizing/averaging for testing purposes/to extend the data some. Not sure if this was necessarily needed?
+
+Model skill did not necessarily change with this modification. All it really did was change the importance of GPH. 
+Prob distributions are confusing. 
+I will have to discuss these with Zheng. Maybe it will be more worth it to not do a LL paper?
+
+As long as the SHAP plots make sense, I will probably stick with the back-extended data just for my own mental sanity and consistency. 
