@@ -21,3 +21,5 @@ The short story is that the FOR from the RF model, particularly when switching f
 The only thing that changed was the extent of the input data, adding in ~8% of data, and a shifting of the running mean to earlier. This caused GPH to increase in importance, likely attributed to the model favoring that tropospheric relationship. I will need to discuss this with Andrea. I do not think there is a direct NAO teleconnection observed here because it is not physically consistent. 
 However, in more fascinating observations, the distributions of features are the same for BOTH forecast areas. This is GREAT. It means that when the model is confident for both regions, its for the same reasons. 
 :)
+
+Same with SE US, just checked.
