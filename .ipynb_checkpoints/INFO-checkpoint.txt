@@ -9,3 +9,15 @@ Prob distributions are confusing.
 I will have to discuss these with Zheng. Maybe it will be more worth it to not do a LL paper?
 
 As long as the SHAP plots make sense, I will probably stick with the back-extended data just for my own mental sanity and consistency. 
+
+########################################################
+7/9/2025
+
+Okay, so after some deliberation ... it seems we have reached a consensus on what is going to happen here. 
+My work is re-aligning with my WINGS proposal. It is just a matter of how exactly to skin the proverbial cat. 
+
+The short story is that the FOR from the RF model, particularly when switching forecast regions, increase substantially. The model performs better than climo with >0 BSS. This does not change dramatically when comparing the two models ... which drives home Zheng's point of "why use a more complicated model if you do not have to"
+
+The only thing that changed was the extent of the input data, adding in ~8% of data, and a shifting of the running mean to earlier. This caused GPH to increase in importance, likely attributed to the model favoring that tropospheric relationship. I will need to discuss this with Andrea. I do not think there is a direct NAO teleconnection observed here because it is not physically consistent. 
+However, in more fascinating observations, the distributions of features are the same for BOTH forecast areas. This is GREAT. It means that when the model is confident for both regions, its for the same reasons. 
+:)
