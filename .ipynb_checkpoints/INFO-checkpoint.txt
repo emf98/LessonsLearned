@@ -23,3 +23,13 @@ However, in more fascinating observations, the distributions of features are the
 :)
 
 Same with SE US, just checked.
+
+########################################################
+7/10/2025
+
+I am briefly going to test all of this using anomalies instead of just running mean values. 
+I also switched GPH to 100 hPa. 
+
+nolag_extendedanom_input
+
+Nothing really changed except the features. 
