@@ -42,3 +42,5 @@ Changed the validation and testing windows to 15% eac or ~10 years to match what
 There is some overfitting in the European model before conducting feature selection. This is less prevalent for the other regions. After feature selection, model overfitting is reduced. 
 
 All models look good. Evidence for increased instances for opportunity forecasts. 
+
+Now I am going to redo the boxplots with the increased window. Hopefully to compare with the EOF model. 
