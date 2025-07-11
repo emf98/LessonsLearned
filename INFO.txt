@@ -44,3 +44,9 @@ There is some overfitting in the European model before conducting feature select
 All models look good. Evidence for increased instances for opportunity forecasts. 
 
 Now I am going to redo the boxplots with the increased window. Hopefully to compare with the EOF model. 
+
+My initial comparison with the EOF model shows consistent FOs from the 100hPa GPH, which is the most important feature for the RF model, however the information from the U-wind is different. Almost opposite. It's almost directly showing that the EOF model does better at picking up strong vortex signals connected with positive temperature anomalies, same with negative and a disrupted vortex. It is almost like the EOF model does a better job at picking up known sources of stratospheric variability and connecting that to skillful predictions of temperature anomalies... but the RF is picking up on other non-specific stratospheric varaibilities related to the vortex itself and its location, etc. It gets more information from the vortex behavior and uses that to make decisions, and those are the same regardless of region. 
+
+I would like to see whether the EOF FOs change with forecast region. 
+I will try that on monday. 
+After that, I will write the outline for this new LL paper and begin work on expanding the previous one. 
