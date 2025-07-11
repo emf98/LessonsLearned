@@ -33,3 +33,12 @@ I also switched GPH to 100 hPa.
 nolag_extendedanom_input
 
 Nothing really changed except the features. 
+
+########################################################
+7/11/2025
+
+Changed the validation and testing windows to 15% eac or ~10 years to match what was used for the EOF model. 
+
+There is some overfitting in the European model before conducting feature selection. This is less prevalent for the other regions. After feature selection, model overfitting is reduced. 
+
+All models look good. Evidence for increased instances for opportunity forecasts. 
