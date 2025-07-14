@@ -50,3 +50,10 @@ My initial comparison with the EOF model shows consistent FOs from the 100hPa GP
 I would like to see whether the EOF FOs change with forecast region. 
 I will try that on monday. 
 After that, I will write the outline for this new LL paper and begin work on expanding the previous one. 
+
+########################################################
+7/14/2025
+
+I am trying to test whether the FOs change within the EOF LSTM by switching to the Canadian forecast region. 
+
+
