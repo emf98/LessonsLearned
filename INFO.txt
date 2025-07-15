@@ -56,4 +56,9 @@ After that, I will write the outline for this new LL paper and begin work on exp
 
 I am trying to test whether the FOs change within the EOF LSTM by switching to the Canadian forecast region. 
 
+########################################################
+7/15/2025
+
+And now I would like to see how many of these events overlap between the LSTM and RF models. 
+
 
