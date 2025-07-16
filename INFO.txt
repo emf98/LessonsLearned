@@ -78,3 +78,5 @@ I also fixed the ways the box plots were indexed and created, so I will need to 
 My real question is still WHY the FOs are the same regardless of region. 
 Is this a good thing? 
 
+I wrote a little list of things for me to double-check tomorrow before getting involved with looking at the composites again. (The dates of which should match now...)
+
