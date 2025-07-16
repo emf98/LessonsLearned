@@ -67,3 +67,14 @@ And now I would like to see how many of these events overlap between the LSTM an
 I have a thought. 
 I am currently unsure whether or not it makes sense that the FOs show the same thing. This could be a good thing. This could imply that there is some other type of stratospheric variability that is crucial in improving forecasts in this observed range with our features... OR it could be wrong. I am feeling motivated to look again at shifting the temps/inputs forward to November for such a prediction to see if that changes the FOs and model skill. This will also make comparing indices with the other model easier, selfishly. 
 
+Okay, so think about it this way. 
+The EOF model is October 19-March ... whatever. It also ends on date index 168 but from the 14 day window used for the LSTM. So think about it, end to end, as Index 33 to Index 168 as being the first last day of the windows and last ... last day of the windows. AHAHA XD. So when you switch to this RF model, you are just looking at the 1-to-1 comparison. November 2 forecasting for November 16 ... through to the end of March. This case creates output target arrays of the same shape (62*135,2). 
+
+NOW... they match. 
+I think I am going to keep this "reduced" RF set up, make the plots, etc. 
+
+I also fixed the ways the box plots were indexed and created, so I will need to resend that image to Andrea. 
+
+My real question is still WHY the FOs are the same regardless of region. 
+Is this a good thing? 
+
