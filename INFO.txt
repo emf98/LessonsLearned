@@ -61,4 +61,9 @@ I am trying to test whether the FOs change within the EOF LSTM by switching to t
 
 And now I would like to see how many of these events overlap between the LSTM and RF models. 
 
+########################################################
+7/16/2025
+
+I have a thought. 
+I am currently unsure whether or not it makes sense that the FOs show the same thing. This could be a good thing. This could imply that there is some other type of stratospheric variability that is crucial in improving forecasts in this observed range with our features... OR it could be wrong. I am feeling motivated to look again at shifting the temps/inputs forward to November for such a prediction to see if that changes the FOs and model skill. This will also make comparing indices with the other model easier, selfishly. 
 
