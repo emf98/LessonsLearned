@@ -80,3 +80,11 @@ Is this a good thing?
 
 I wrote a little list of things for me to double-check tomorrow before getting involved with looking at the composites again. (The dates of which should match now...)
 
+########################################################
+7/17/2025
+All checked out. Images were correct.
+
+Now I am working on the comparisons of the indexes between the two models. I have that code working, I believe. I have it saving the % overalp between models and # of shared events.
+I went in and plan to save the indexes of the events themselves so that I can look at composites of all the things (box plots and cross sections) so we can see what the common features are and not!
+
+I am saving these shared indices to the `shared_keys` folder. 
