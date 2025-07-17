@@ -88,3 +88,5 @@ Now I am working on the comparisons of the indexes between the two models. I hav
 I went in and plan to save the indexes of the events themselves so that I can look at composites of all the things (box plots and cross sections) so we can see what the common features are and not!
 
 I am saving these shared indices to the `shared_keys` folder. 
+
+I have them done ... Not quite sure what is happening to positive and correct U wind SEUS though... 
