@@ -89,4 +89,11 @@ I went in and plan to save the indexes of the events themselves so that I can lo
 
 I am saving these shared indices to the `shared_keys` folder. 
 
-I have them done ... Not quite sure what is happening to positive and correct U wind SEUS though... 
+I have them done ... Not quite sure what is happening to positive and correct U wind SEUS though...
+
+########################################################
+7/18/2025
+
+I plan to look further into why the SEUS plot is messed up later (@ gym) + throw together comparison PowerPoint for advisors. 
+
+Right now I am working on the outline for this updated LL paper. 
