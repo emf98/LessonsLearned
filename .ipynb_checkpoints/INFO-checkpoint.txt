@@ -102,3 +102,11 @@ Right now I am working on the outline for this updated LL paper.
 7/22/2025
 
 I have been working on the updated LL paper, hence the lack of activity. 
+
+########################################################
+7/23/2025
+
+I tried the EOF model as a RF model.
+I think the results are comparable. I felt compelled to even try because it was looking like day 0 (14 days out) in the SHAP density plot was highest, so I felt it may not make too much of a difference to just try the model as a RF isntead for simplicity... also because I feel like it is something that reviewers would comment on in the LL paper. Using the same architecture. 
+
+Same results as LSTM. Ellipse metrics are still better for FOs. 
