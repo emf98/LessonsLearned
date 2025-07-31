@@ -121,3 +121,5 @@ Putting together figures for comparison.
 
 I have been working on paper edits for Fernandez et al 2025 to JAMC. 
 I cam back to do a fourth ellipse model, LSTM. Just to come full circle with the model comparison. 
+
+Forgot to change config again. Lol. 
