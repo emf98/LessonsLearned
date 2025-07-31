@@ -115,3 +115,9 @@ Same results as LSTM. Ellipse metrics are still better for FOs.
 7/25/2025
 
 Putting together figures for comparison. 
+
+########################################################
+7/31/2025
+
+I have been working on paper edits for Fernandez et al 2025 to JAMC. 
+I cam back to do a fourth ellipse model, LSTM. Just to come full circle with the model comparison. 
