@@ -123,3 +123,9 @@ I have been working on paper edits for Fernandez et al 2025 to JAMC.
 I cam back to do a fourth ellipse model, LSTM. Just to come full circle with the model comparison. 
 
 Forgot to change config again. Lol. 
+
+########################################################
+8/4/2025
+
+Got sick. Had to take a break. I am back now to fix the LSTM ellipse model, conduct some proper tuning. 
+I added in a .gitignore to leave out those files from the repo because there are about to be a large number of them. 
