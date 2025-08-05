@@ -129,3 +129,10 @@ Forgot to change config again. Lol.
 
 Got sick. Had to take a break. I am back now to fix the LSTM ellipse model, conduct some proper tuning. 
 I added in a .gitignore to leave out those files from the repo because there are about to be a large number of them. 
+
+########################################################
+8/5/2025
+
+SkillScore run for tuned LSTM ellipse model. Interesting results. Looks like for confident predictions it is NEVER predicting negative temperature outcomes correctly/on purpose. Not sure why. 
+
+I wonder still if this is a tuning issue on my part of whether this model really is just dogsh*t.
