@@ -136,3 +136,12 @@ I added in a .gitignore to leave out those files from the repo because there are
 SkillScore run for tuned LSTM ellipse model. Interesting results. Looks like for confident predictions it is NEVER predicting negative temperature outcomes correctly/on purpose. Not sure why. 
 
 I wonder still if this is a tuning issue on my part of whether this model really is just dogsh*t.
+
+########################################################
+8/6/2025
+
+Apparently my logic was backwards for false negative/false positive. Which I kinda already knew? I just did not think it was as confusing. I am going to need to go back in and remediate this because ... it's wrong, obviously. This means fixing and re-running all of the models. Yay me. 
+
+This all came about because I was trying to distinguish how many events where near neutral for classification within the RF's decision making. 
+And it does look like this is the case ... 
+The confident and correct events are predominantly that classification whereas false pos/neg has more neutral events. 
