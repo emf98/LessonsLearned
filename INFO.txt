@@ -144,4 +144,9 @@ Apparently my logic was backwards for false negative/false positive. Which I kin
 
 This all came about because I was trying to distinguish how many events where near neutral for classification within the RF's decision making. 
 And it does look like this is the case ... 
-The confident and correct events are predominantly that classification whereas false pos/neg has more neutral events. 
+The confident and correct events are predominantly that classification whereas false pos/neg has more neutral events.
+
+########################################################
+8/8/2025
+
+Updated comparisons of indices are in paper draft. 
