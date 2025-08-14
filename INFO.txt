@@ -150,3 +150,12 @@ The confident and correct events are predominantly that classification whereas f
 8/8/2025
 
 Updated comparisons of indices are in paper draft. 
+
+########################################################
+8/14/2025
+
+I was working on manuscript edits for a separate paper. 
+Those are mostly done, so now I am going to be tuning details for this work so that I can start writing. 
+I am starting by looking at the distribution of >1.5 std temp events (mild anomalies) that coincided with 90th percentile predictions vs. neutrals.
+
+I will also be modifying and saving box plots from skill scores, potentially. 
