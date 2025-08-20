@@ -159,3 +159,19 @@ Those are mostly done, so now I am going to be tuning details for this work so t
 I am starting by looking at the distribution of >1.5 std temp events (mild anomalies) that coincided with 90th percentile predictions vs. neutrals.
 
 I will also be modifying and saving box plots from skill scores, potentially. 
+
+########################################################
+8/20/2025
+
+I was back in here to do some image processing and whatnot for this paper and I have kinda reached a point where ... like. I think I have what I need. 
+To a certain extent, I feel like I am procrastinating the writing component ahahaha. 
+Essentially what I wanted to do was see if there were any obvious differences between the actual ellipse values for temp anomalies in making confident and correct predicitions, and what I found was that, really, no?
+Especially for the ellipse diagnostics.
+
+I feel like what this tells us is that when it comes to making these confident predictions, it really is more about what the STRATOSPHERE is doing at those moments rather than the actual temperature value/outcome. 
+Given that there is consistency, regardless of whether the temperature is actually extreme (or not), we could be motivated to say that the stratosphere is the real driver in this decision making and the cause for increased confidence in place of the outcome ITSELF.
+There is no tropospheric driver to the decision making of these models when they are highly confident ... it is learning purely from the behavior of these stratospheric diagnostics.  
+
+AT LEAST FOR THE RF MODELS....
+
+Now I am gonna look at this for the LSTMs because I wanna know if they also only use stratospheric info. lol. 
