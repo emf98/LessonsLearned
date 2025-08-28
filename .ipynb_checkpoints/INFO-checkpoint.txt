@@ -192,6 +192,7 @@ This is very interesting and important, and I am working on uploading some addit
 3) updated ellipse diags with 350K PV
 4) CAP_pvu_weightedANOM_350 (timeseries)
 5) NA_gph_weightedANOM_100 (timeseries)
+6) 1959_gphforNAO (80-40 lat averaged, all lons and levels for cross section post-RF)
 
 I am quickly going to re-run the RF with the updated ellipse diags, but I do not think that will make a difference. 
 
