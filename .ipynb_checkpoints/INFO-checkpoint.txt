@@ -194,3 +194,76 @@ This is very interesting and important, and I am working on uploading some addit
 5) NA_gph_weightedANOM_100 (timeseries)
 
 I am quickly going to re-run the RF with the updated ellipse diags, but I do not think that will make a difference. 
+
+PV and GPH
+Average Num. of 10% Confident and Correct Postive Predictions: 30.23%
+Average Num. of 10% Confident and Correct Negative Predictions: 30.87%
+Average Num. of 10% Confident and FALSE Postive Predictions: 19.73%
+Average Num. of 10% Confident and FALSE Negative Predictions: 19.17%
+#######################################################################
+Average Num. of 10% Confident and Correct Predictions: 61.10%
+Average Num. of 10% Confident and FALSE Predictions: 38.90%
+
+PV and Ellipse
+Average Num. of 10% Confident and Correct Postive Predictions: 35.37%
+Average Num. of 10% Confident and Correct Negative Predictions: 34.31%
+Average Num. of 10% Confident and FALSE Postive Predictions: 14.63%
+Average Num. of 10% Confident and FALSE Negative Predictions: 15.69%
+#######################################################################
+Average Num. of 10% Confident and Correct Predictions: 69.68%
+Average Num. of 10% Confident and FALSE Predictions: 30.32%
+
+Just Ellipse
+Average Num. of 10% Confident and Correct Postive Predictions: 37.03%
+Average Num. of 10% Confident and Correct Negative Predictions: 35.58%
+Average Num. of 10% Confident and FALSE Postive Predictions: 12.98%
+Average Num. of 10% Confident and FALSE Negative Predictions: 14.42%
+#######################################################################
+Average Num. of 10% Confident and Correct Predictions: 72.60%
+Average Num. of 10% Confident and FALSE Predictions: 27.40%
+
+Just GPH
+Average Num. of 10% Confident and Correct Postive Predictions: 33.22%
+Average Num. of 10% Confident and Correct Negative Predictions: 29.32%
+Average Num. of 10% Confident and FALSE Postive Predictions: 17.70%
+Average Num. of 10% Confident and FALSE Negative Predictions: 19.76%
+#######################################################################
+Average Num. of 10% Confident and Correct Predictions: 62.54%
+Average Num. of 10% Confident and FALSE Predictions: 37.46%
+
+GPH and Ellipse
+Average Num. of 10% Confident and Correct Postive Predictions: 42.39%
+Average Num. of 10% Confident and Correct Negative Predictions: 36.61%
+Average Num. of 10% Confident and FALSE Postive Predictions: 7.60%
+Average Num. of 10% Confident and FALSE Negative Predictions: 13.39%
+#######################################################################
+Average Num. of 10% Confident and Correct Predictions: 79.00%
+Average Num. of 10% Confident and FALSE Predictions: 21.00%
+
+_____________________________________________________________________
+Brier Skill Score (All): 0.0661
+Brier Skill Score (Train): 0.0715
+Brier Skill Score (Test): 0.0822
+Brier Skill Score (Validation): 0.0236
+_____________________________________________________________________
+Recall and Precision: Neg Cat
+#########
+Recall Accuracy Score (All): 0.7524
+Recall Accuracy Score (Train): 0.7510
+Recall Accuracy Score (Test): 0.7919
+Recall AccuracyScore (Validation): 0.7204
+Precision Accuracy Score (All): 0.6020
+Precision Accuracy Score (Train): 0.6115
+Precision Accuracy Score (Test): 0.5893
+Precision AccuracyScore (Validation): 0.5755
+_____________________________________________________________________
+Recall and Precision: Pos Cat
+#########
+Recall Accuracy Score (All): 0.4675
+Recall Accuracy Score (Train): 0.4810
+Recall Accuracy Score (Test): 0.4495
+Recall AccuracyScore (Validation): 0.4312
+Precision Accuracy Score (All): 0.6390
+Precision Accuracy Score (Train): 0.6409
+Precision Accuracy Score (Test): 0.6854
+Precision AccuracyScore (Validation): 0.5929
