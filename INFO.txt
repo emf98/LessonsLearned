@@ -175,3 +175,22 @@ There is no tropospheric driver to the decision making of these models when they
 AT LEAST FOR THE RF MODELS....
 
 Now I am gonna look at this for the LSTMs because I wanna know if they also only use stratospheric info. lol. 
+
+########################################################
+8/28/2025
+
+I have done quite a bit with the explainability of this model by looking into what exactly is causing the ellipse RF to have increased explainability. 
+Well, thanks to thoughts that plagued me at 2AM, I revisited the RF ellipse model and ran several different iterations without certain metrics as a means to evaluate what exactly is giving the model those windows of opportunity. 
+As it turns out, what I realized is that the model observes increased forecasts of opportunity due to combined information from 
+1) the vortex location relative to an upper atmospheric wave-1 signal and 
+2) how that communicates with climate modes (NAO and AO) as shown through PV and GPH, with the GPH response being greater. 
+
+This is very interesting and important, and I am working on uploading some additional data here so that I can continue to make some cross sections and plot for explainability. 
+
+1) full field 100hPa cross section of GPH over the North Atlantic (1959_gphNA_2deg_100)
+2) full field 350K PV polar cap cross section (pv350pt)
+3) updated ellipse diags with 350K PV
+4) CAP_pvu_weightedANOM_350 (timeseries)
+5) NA_gph_weightedANOM_100 (timeseries)
+
+I am quickly going to re-run the RF with the updated ellipse diags, but I do not think that will make a difference. 
