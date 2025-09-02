@@ -268,3 +268,13 @@ Precision Accuracy Score (All): 0.6390
 Precision Accuracy Score (Train): 0.6409
 Precision Accuracy Score (Test): 0.6854
 Precision AccuracyScore (Validation): 0.5929
+
+########################################################
+9/2/2025
+I am working on further developing this argument of ... ya know, ellipse metric viability. It is looking like everything is consistent+makes sense.
+I added in the EHF full-field to look for any downward activity, I will have to show these to Andrea+Zheng. 
+
+I think next I will look at these same composited but for those select temp events ... which is a lot of work.
+But I can manage it, I think. 
+
+I also want to explore a test model that has MSLP involved. 
