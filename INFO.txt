@@ -277,4 +277,4 @@ I added in the EHF full-field to look for any downward activity, I will have to 
 I think next I will look at these same composited but for those select temp events ... which is a lot of work.
 But I can manage it, I think. 
 
-I also want to explore a test model that has MSLP involved. 
+I also want to explore a test model that has MSLP involved. (I gave this its own file.)
