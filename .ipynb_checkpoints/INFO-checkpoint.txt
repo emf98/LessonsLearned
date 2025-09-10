@@ -278,3 +278,15 @@ I think next I will look at these same composited but for those select temp even
 But I can manage it, I think. 
 
 I also want to explore a test model that has MSLP involved. (I gave this its own file.)
+
+... It did not change the effectiveness of the model, so I am moving on from that. 
+
+I will look at differences w/ temp composites now. 
+
+########################################################
+9/10/2025
+
+I am still at UIFCW. 
+This past week has been a combination of working on edits for my first publication while finalizing images/drafting AI Paper #1. 
+
+These most recent pushes are related to finalizing images and setting up my file/this repository for my next Chapter of research.
