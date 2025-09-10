@@ -290,3 +290,5 @@ I am still at UIFCW.
 This past week has been a combination of working on edits for my first publication while finalizing images/drafting AI Paper #1. 
 
 These most recent pushes are related to finalizing images and setting up my file/this repository for my next Chapter of research.
+
+Also, quickly tested a different "test" period for this RF model and it chose the same features but struggled with identifying the forecasts of opportunity. At least I know that the model is consistent in what it looks at. 
