@@ -6,6 +6,7 @@
     # day length for each year, aka indication of leadtime (idx)
     # input data array from selected features
     # output data array
+    # climo array
 
 #The following are returned from this definition statement:
     # test90_acc, 90th percentile test acc for barplot
@@ -53,7 +54,7 @@ def calculate_accuracy(y_true, y_prob, threshold=0.5):
     return np.mean(y_true == y_pred)
 
 ##definition for RF loop with confidence evaluation
-def rf_90thpercentile(n,idx,input2,output):
+def rf_90thpercentile(n,idx,input2,output,climo):
     print("Load in data ...")
     X_train = input2.iloc[:(52*idx),:]
     X_test = input2.iloc[(52*idx):,:]
@@ -124,13 +125,13 @@ def rf_90thpercentile(n,idx,input2,output):
     ##one-hot encoded outputs for the purpose of calculating probabilities
     Y_all = keras.utils.to_categorical(output)
     Y_tes = keras.utils.to_categorical(Y_test)
-    X_all = input.values
+    X_all = input2.values
     
     ##make loop for cross validation 
     print(" ")
     print("Begin RF CV.")
     for l in range(0,n):
-        print("Cross Val #:"+str(l))
+        #print("Cross Val #:"+str(l))
         ##randomly choose a fraction of events for validation and training
         start = random.randrange(len(X_train.iloc[:,0])-val_subset)
         end = start+(val_subset)
@@ -315,6 +316,6 @@ def rf_90thpercentile(n,idx,input2,output):
     explainer = shap.TreeExplainer(rf_reg2)
     shap_values = explainer.shap_values(X_test)
     shap_obj = explainer(X_test) ##return this value to plot. 
-    
+    print("Done.")
     return test90_acc, fulltest_acc, shap_obj, posXtest, FposXtest, negXtest, FnegXtest;
 
