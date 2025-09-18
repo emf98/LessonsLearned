@@ -292,3 +292,13 @@ This past week has been a combination of working on edits for my first publicati
 These most recent pushes are related to finalizing images and setting up my file/this repository for my next Chapter of research.
 
 Also, quickly tested a different "test" period for this RF model and it chose the same features but struggled with identifying the forecasts of opportunity. At least I know that the model is consistent in what it looks at. 
+
+########################################################
+9/18/2025
+
+Back!
+I have been writing. 
+The latest addition here is the "leadtimes" file. That contains the work for conducting this same analysis at additional lead times to what is previously done. 
+I optimized this by making Python files with functions for the RF architectures. This substantially cleans up my code and makes it a lot easier to do the work in one Jupyter notebook for each lead time. 
+
+I am likely going to do the same for the prediction plots just to clean up those files and make the process more streamlined. I will likely separate by plot type for that one. 
