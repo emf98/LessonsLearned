@@ -6,6 +6,7 @@
     # day length for each year, aka indication of leadtime (idx)
     # input data array
     # output data array
+    # climo array
 
 #The list "important" is returned so that the user can make the feature importance bar plot. 
 #____________________________________________________________________#
@@ -39,7 +40,7 @@ warnings.filterwarnings('ignore')
 
 # the goal of this python file is the RF architecture for FEATURE SELECTION
 
-def rf_featselect(n,idx,input,output):
+def rf_featselect(n,idx,input,output,climo):
     
     X_train = input.iloc[:(52*idx),:]
     X_test = input.iloc[(52*idx):,:]
@@ -68,9 +69,10 @@ def rf_featselect(n,idx,input,output):
     Y_tes = keras.utils.to_categorical(Y_test)
     X_all = input.values
     
+    print("Begin CV ...")
     ##make loop for cross validation 
     for l in range(0,n):
-        print("Cross Val #:"+str(l))
+        #print("Cross Val #:"+str(l))
         ##randomly choose a fraction of events for validation and training
         start = random.randrange(len(X_train.iloc[:,0])-val_subset)
         end = start+(val_subset)
