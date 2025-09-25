@@ -13,7 +13,7 @@
 #PLOTTING RELATED:
 #BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str)
 #GPH_horzCS(GPH_cpos,GPH_cneg,GPH_Fpos,GPH_Fneg,
-               #PHA_cpos,GPHA_cneg,GPHA_Fpos,GPHA_Fneg,
+               #GPHA_cpos,GPHA_cneg,GPHA_Fpos,GPHA_Fneg,
                #colorbarMin, colorbarMax, colorspace,
                #loc_str, lat, lon,save_loc):
 #Temp_horzCS(EHF_cpos,EHF_cneg,EHF_Fpos,EHF_Fneg, loc_str, lat, lon, save_loc,
@@ -27,6 +27,11 @@ import pandas as pd
 import xarray as xr 
 import pickle 
 import matplotlib.pyplot as plt
+
+from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
+from geopy.distance import great_circle
+import cartopy.crs as ccrs
+from matplotlib.path import Path
 
 #__________daily anomaly calculation__________
 
@@ -294,7 +299,7 @@ def GPH_horzCS(GPH_cpos,GPH_cneg,GPH_Fpos,GPH_Fneg,
             linewidth = 1.0
             color = 'black'
 
-            if level == highlight_level1 or level == highlight_level2:
+            if level == highlight_level1:
                 linestyle = 'solid'
                 linewidth = 2.5
 
@@ -327,10 +332,10 @@ def Temp_horzCS(EHF_cpos,EHF_cneg,EHF_Fpos,EHF_Fneg, loc_str, lat, lon, save_loc
 
     titles = ["True Positive", "True Negative", "False Positive", "False Negative"]
     data = [
-        np.nanmean(EHF_cpos, axis=0),
-        np.nanmean(EHF_cneg, axis=0),
-        np.nanmean(EHF_Fpos, axis=0),
-        np.nanmean(EHF_Fneg, axis=0)
+        np.nanmean(extrapolate(EHF_cpos), axis=0),
+        np.nanmean(extrapolate(EHF_cneg), axis=0),
+        np.nanmean(extrapolate(EHF_Fpos), axis=0),
+        np.nanmean(extrapolate(EHF_Fneg), axis=0)
     ]
 
 
