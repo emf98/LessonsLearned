@@ -328,7 +328,7 @@ def Temp_horzCS(EHF_cpos,EHF_cneg,EHF_Fpos,EHF_Fneg, loc_str, lat, lon, save_loc
                colorbarMin, colorbarMax, colorspace):
     fs = 18
     fig, axes = plt.subplots(2, 2, figsize=(14, 14), subplot_kw={'projection': ccrs.NorthPolarStereo()})
-    plt.suptitle("Composites of Surface Temp Anoms during 90th Percentile Confident Predictions "+str(loc_str), fontsize=21)   
+    plt.suptitle("Composites of Surface Temp Anoms during 90th Percentile Confident Predictions"+str(loc_str), fontsize=21)   
 
     titles = ["True Positive", "True Negative", "False Positive", "False Negative"]
     data = [
