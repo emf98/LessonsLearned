@@ -1,21 +1,31 @@
-# #Code for reducing bulk in plotting files
+##Code for reducing bulk in plotting files
 
-# file generated 9/19/2025, E. Fernandez
+#file generated 9/19/2025, E. Fernandez
 
-# The following definition statements are contained within this file:
+#The following definition statements are contained within this file:
 
-# DATA PROCESSING RELATED:
-# extrapolate(data); returns same array with additional column added on
-# preprocess_ellipse(input,shift,idx); returns input array
-# BWcheckevent_label(posXtest,input2,idx); returns arrays for BW plots
-# CScheckevent_label(posXtest,data_array,idx); returns 3D array for cross section plots
+#DATA PROCESSING RELATED:
+#extrapolate(data); returns same array with additional column added on
+#preprocess_ellipse(input,shift,idx); returns input array
+#BWcheckevent_label(posXtest,input2,idx); returns arrays for BW plots
+#CScheckevent_label(posXtest,data_array,idx); returns 3D array for cross section plots
 
 #PLOTTING RELATED:
+##Box and WHisker Plot
 #BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str)
+
+#Horizontal GPH 
 #GPH_horzCS(GPH_cpos,GPH_cneg,GPH_Fpos,GPH_Fneg,
                #GPHA_cpos,GPHA_cneg,GPHA_Fpos,GPHA_Fneg,
                #colorbarMin, colorbarMax, colorspace,
                #loc_str, lat, lon,save_loc):
+            
+#Vertical GPH 
+#def GPH_vertCS(GPH_cpos,GPH_cneg,GPH_Fpos,GPH_Fneg,
+               #colorbarMin, colorbarMax, colorspace,
+               #loc_str, lat, lon, save_loc):
+        
+#Horizontal Temp
 #Temp_horzCS(EHF_cpos,EHF_cneg,EHF_Fpos,EHF_Fneg, loc_str, lat, lon, save_loc,
                #colorbarMin, colorbarMax, colorspace):
 ""
@@ -32,7 +42,7 @@ from geopy.distance import great_circle
 import cartopy.crs as ccrs
 from matplotlib.path import Path
 
-# __________daily anomaly calculation__________
+#__________daily anomaly calculation__________
 
 def daily_anomaly(target):
     dailymean = np.nanmean(target,axis=1)
@@ -42,7 +52,7 @@ def daily_anomaly(target):
     print(anom.shape)
     return anom; 
 
-# _____________data extrapolation_____________
+#_____________data extrapolation_____________
 
 def extrapolate(data):
     data_test = data[..., 0:1] 
@@ -50,7 +60,7 @@ def extrapolate(data):
     data = np.concatenate([data, data_test], axis=-1)
     return data;
 
-# ____________process input dataset____________
+#____________process input dataset____________
 
 def preprocess_ellipse(input,shift,idx):
     print("Load data...")
@@ -140,7 +150,7 @@ def preprocess_ellipse(input,shift,idx):
     
     return input;
 
-# ____________calculate rates of events____________
+#____________calculate rates of events____________
 
 #only for box and whisker plots
 def BWcheckevent_label(posXtest,input2,idx):
@@ -209,7 +219,7 @@ def CScheckevent_label(posXtest,data_array,idx):
     
     return data_list;
 
-# ___________________________PLOTTING RELATED DEFINITIONS___________________________
+#___________________________PLOTTING RELATED DEFINITIONS___________________________
 
 def BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str):
     import matplotlib.ticker as mticker
@@ -363,4 +373,60 @@ def Temp_horzCS(EHF_cpos,EHF_cneg,EHF_Fpos,EHF_Fneg, loc_str, lat, lon, save_loc
     plt.subplots_adjust(top=0.98)
     plt.savefig(str(save_loc),bbox_inches = 'tight')
     plt.show()
+    return ;
+
+########################################################################
+# #vertical cross section
+def GPH_vertCS(GPH_cpos,GPH_cneg,GPH_Fpos,GPH_Fneg,
+               colorbarMin, colorbarMax, colorspace,
+               loc_str, lev, lon, save_loc):
+    fs = 18
+    fig, axes = plt.subplots(2, 2, figsize=(14, 16))
+    plt.suptitle("Composites of 40-80 $^o$N GPH Anomalies during 90th Percentile Confident Predictions"+str(loc_str),fontsize=21)   
+
+    titles = ["True Positive", "True Negative", "False Positive", "False Negative",]
+    ##only look below 10hPa
+    data = [
+        np.nanmean(GPH_cpos[:,5:], axis=0),
+        np.nanmean(GPH_cneg[:,5:], axis=0),
+        np.nanmean(GPH_Fpos[:,5:], axis=0),
+        np.nanmean(GPH_Fneg[:,5:], axis=0)]
+
+    axes = axes.flatten()
+    #remove the last (empty) axis
+
+    for i in range(0, 4):
+        color = "RdBu_r"
+
+        clevel = np.arange(colorbarMin, colorbarMax + colorspace, colorspace)
+        axes[i].set_title("GPH, "+str(titles[i]), fontsize=fs-1, y=0.99) 
+
+        h = axes[i].contourf(
+            lon[:180],
+            lev[5:],
+            data[i],
+            clevel,
+            cmap=color,
+            extend="both",
+        )
+        cbar = plt.colorbar(
+            h, orientation="vertical", shrink=1, fraction=0.1, pad=0.1, aspect=40
+        )
+        cbar.ax.tick_params(labelsize=fs-2)
+        axes[i].tick_params(labelsize=fs-2)
+        axes[i].set_yscale('log')
+        axes[i].invert_yaxis()
+        axes[i].set_ylabel('Pressure (hPa)', fontsize=fs-3)
+        axes[i].set_yticks([10, 30, 100, 200, 300, 450, 700, 1000]) 
+        axes[i].get_yaxis().set_major_formatter(plt.ScalarFormatter()) 
+
+        axes[i].set_xlim(0, 360)
+        axes[i].set_xlabel('Longitude', fontsize=fs-3)
+
+
+    plt.tight_layout()
+    plt.subplots_adjust(top=0.945)
+    plt.savefig(str(save_loc),bbox_inches = 'tight')
+    plt.show()
+    
     return ;
