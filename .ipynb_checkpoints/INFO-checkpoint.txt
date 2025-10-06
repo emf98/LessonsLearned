@@ -302,3 +302,12 @@ The latest addition here is the "leadtimes" file. That contains the work for con
 I optimized this by making Python files with functions for the RF architectures. This substantially cleans up my code and makes it a lot easier to do the work in one Jupyter notebook for each lead time. 
 
 I am likely going to do the same for the prediction plots just to clean up those files and make the process more streamlined. I will likely separate by plot type for that one. 
+
+########################################################
+10/6/2025
+
+Just to provide an update:
+I have mostly finished the europe-only analysis. This is being written into its own paper now. 
+I have majorly finished the leadtime separated analysis. I will be separating the images and formatting those for publication. 
+
+The only remaining image I need to make is for the date overlap composites of Europe and Canada, since those are so similar. 
