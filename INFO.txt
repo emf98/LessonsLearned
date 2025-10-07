@@ -311,3 +311,11 @@ I have mostly finished the europe-only analysis. This is being written into its 
 I have majorly finished the leadtime separated analysis. I will be separating the images and formatting those for publication. 
 
 The only remaining image I need to make is for the date overlap composites of Europe and Canada, since those are so similar. 
+
+########################################################
+10/7/2025
+
+That image is done!
+Files for that are in leadtimes/date_compare. 
+
+I can modify this as needed to look at other regions too. 
