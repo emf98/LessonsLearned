@@ -318,4 +318,35 @@ The only remaining image I need to make is for the date overlap composites of Eu
 That image is done!
 Files for that are in leadtimes/date_compare. 
 
-I can modify this as needed to look at other regions too. 
+I can modify this as needed to look at other regions too.
+
+Oh and then I just ... added in additional measure to look at when the events occur within the season for 14-days. I can do this at other times too. 
+Europe
+#######
+True Positive: There are 93.21% of events before January 10th and 6.79% of events after.
+____________________________________________________
+True Negative: There are 22.11% of events before January 10th and 77.89% of events after.
+____________________________________________________
+False Positive: There are 78.5% of events before January 10th and 21.5% of events after.
+____________________________________________________
+False Negative: There are 13.9% of events before January 10th and 86.1% of events after.
+____________________________________________________
+Canada
+#######
+True Positive: There are 98.46% of events before January 10th and 1.54% of events after.
+____________________________________________________
+True Negative: There are 37.11% of events before January 10th and 62.89% of events after.
+____________________________________________________
+False Positive: There are 100.0% of events before January 10th and 0.0% of events after.
+____________________________________________________
+False Negative: There are 66.97% of events before January 10th and 33.03% of events after.
+____________________________________________________
+SE US
+#######
+True Positive: There are 20.98% of events before January 10th and 79.02% of events after.
+____________________________________________________
+True Negative: There are 84.45% of events before January 10th and 15.55% of events after.
+____________________________________________________
+False Positive: There are 18.51% of events before January 10th and 81.49% of events after.
+____________________________________________________
+False Negative: There are 65.43% of events before January 10th and 34.57% of events after.
