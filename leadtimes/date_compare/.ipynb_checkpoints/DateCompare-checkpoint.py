@@ -86,3 +86,33 @@ def two_compare_keys(list1, list2):
     
     ##I have this set up to look at the SLTM/RF only values too but I may save those for another time. 
     return result, count1_only, count2_only;
+
+def date_place(list1, idx):
+    
+    ranges = np.array([x for x in range(0,idx*10,1)])
+    ranges = ranges.reshape(10,idx) 
+    ranges.shape
+    
+    half = round(idx/2)
+    #print(half)
+    less = 0
+    greater = 0
+    
+    for i in range(0,10):
+        for j in range(0,idx):
+            #index for the date being observed
+            date_index = ranges[i,j]
+            for val in list1:
+                if val == date_index and i == 0:
+                    if val < half:
+                        less += 1
+                    if val >= half:
+                        greater += 1
+                if val == date_index and i > 0:
+                    val = val-(idx*i)
+                    if val < half:
+                        less += 1
+                    if val >= half:
+                        greater += 1
+
+    return less, greater;
