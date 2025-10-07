@@ -180,7 +180,8 @@ def combine_cross(GPH_cpos,GPH_cneg,vert_GPH_cpos,vert_GPH_cneg,TEMP_cpos,TEMP_c
                   GPHA_cpos,GPHA_cneg, colorbarMin1, colorbarMax1, colorspace1,
                   colorbarMin2, colorbarMax2, colorspace2, colorbarMin3, colorbarMax3,
                   colorspace3,lead, save_loc):
-    
+    #big ol' plotting chunk 
+    #designating lat and lon and lev first
     lat = np.arange(90, 38, -2)
     lon = np.arange(0, 362, 2)
     lev = np.array([1., 2., 3., 5., 7., 10., 20., 30., 50., 70., 100., 125., 150., 175., 200., 225., 250., 300., 350., 400., 
@@ -190,22 +191,26 @@ def combine_cross(GPH_cpos,GPH_cneg,vert_GPH_cpos,vert_GPH_cneg,TEMP_cpos,TEMP_c
     fig = plt.figure(figsize=(20, 19))
     plt.suptitle("Composites of Features during Shared Confident and Correct Predictions from Europe and Canada, "+str(lead),fontsize=26)   
     titles = ["Correct Positive", "Correct Negative"]
+    
+    #separate datasets for the MAIN plotting and anomalies for GPH horizontal
     data = [GPH_cpos,GPH_cneg,vert_GPH_cpos,vert_GPH_cneg,TEMP_cpos,TEMP_cneg]
     data1 = [GPHA_cpos,GPHA_cneg]
 
-    # Create axes individually to allow mixing projections
     axes = []
     for i in range(6):
+        #mixed projections because ... circles and not circles
         if i in [0, 1, 4, 5]:
-            ax = fig.add_subplot(3, 2, i+1, projection=ccrs.NorthPolarStereo())
+            ax = fig.add_subplot(3, 2, i+1, projection=ccrs.NorthPolarStereo()) #circles
         else:
             ax = fig.add_subplot(3, 2, i+1)
         axes.append(ax)
-
+    
+    #begin loop of course
     for i in range(6):
         ax = axes[i]
 
         if i == 0 or i == 1:
+            ##horizontal cross section of GPH
             ax.set_title("10hPa GPH " + str(titles[i]), fontsize=fs-1, y=1.01, x=0.5)
             ax.coastlines()
 
@@ -244,6 +249,7 @@ def combine_cross(GPH_cpos,GPH_cneg,vert_GPH_cpos,vert_GPH_cneg,TEMP_cpos,TEMP_c
             cbar.ax.tick_params(labelsize=fs - 2)
 
         elif i == 2 or i == 3:
+            ##vertical cross section of GPH
             clevel = np.arange(colorbarMin2, colorbarMax2 + colorspace2, colorspace2)
             ax.set_title("40-80$^o$N GPH, " + str(titles[i - 2]), fontsize=fs-1, y=0.99) 
 
@@ -268,7 +274,8 @@ def combine_cross(GPH_cpos,GPH_cneg,vert_GPH_cpos,vert_GPH_cneg,TEMP_cpos,TEMP_c
             ax.set_xlabel('Longitude', fontsize=fs - 3)
 
         elif i == 4 or i == 5:
-            ax.set_title("Temp Anoms, " + str(titles[i - 4]), fontsize=fs-1, y=1.01, x=0.5)
+            ##horizontal cross section of Temp ... 
+            ax.set_title("1000hPa Temp Anoms, " + str(titles[i - 4]), fontsize=fs-1, y=1.01, x=0.5)
             ax.coastlines()
 
             theta = np.linspace(0, 2 * np.pi, 100)
