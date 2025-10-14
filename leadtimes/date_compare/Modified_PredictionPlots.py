@@ -1,6 +1,6 @@
 ##Code for reducing bulk in plotting files
 
-#file generated 9/19/2025, E. Fernandez
+#file generated 10/6/2025, E. Fernandez
 
 #The following definition statements are contained within this file:
 
