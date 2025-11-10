@@ -172,6 +172,40 @@ def CScheckevent_label(posXtest,data_array,idx):
     
     return data_list;
 
+#only for box and whisker plots
+def BWcheckevent_label(posXtest,input2,idx):
+    
+    ##reduce input to just the testing data
+    nolag_Xtest = input2[52:,:,:]
+    nolag_Xtest.shape
+
+    ####now I wanna make these plots SO ... I am adding an index column on to X_test ... full version. 
+    ranges = np.array([x for x in range(0,idx*10,1)])
+    ranges = ranges.reshape(10,idx) 
+    ranges.shape
+    
+    ##Check whether event is in the desired list (true pos/neg or false pos/neg)
+    posXtest_set = set(posXtest)
+
+    pos_corr_events = []
+    pos_corr_total_events = []
+    
+    for i in range(0,10):
+        for j in range(0,idx):
+            #index for the date being observed
+            date_index = ranges[i,j]
+            if date_index not in posXtest_set:
+                continue
+            elif date_index in posXtest_set:
+                features = nolag_Xtest[i, j, :]
+                pos_corr_events.extend(features)
+                pos_corr_total_events.append(0)
+                
+    ##reshape
+    Tpos = np.array(pos_corr_events).reshape(len(pos_corr_total_events),4)
+    
+    return Tpos;
+
 #___________________________PLOTTING RELATED DEFINITION___________________________
 
 ########################################################################
@@ -298,3 +332,38 @@ def combine_cross(GPH_cpos,GPH_cneg,vert_GPH_cpos,vert_GPH_cneg,TEMP_cpos,TEMP_c
 
     
     return ;
+############################################################################
+def BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str):
+    import matplotlib.ticker as mticker
+    myLocator = mticker.MultipleLocator(2)
+
+    metrics = metrics_list
+    ticks = ['True +', 'False -', 'True -', 'False +'] #set tick numbers for dataset
+    ind = [2, 4, 6, 8]  # the x locations for the groups
+    w = 0.25 #box-plot width
+    c = ["midnightblue","royalblue","mediumvioletred","magenta"]
+    fs = 14
+
+    fig, axes = plt.subplots(4, 1, figsize=(12, 12))
+    plt.suptitle("Distribution of RF Input Features, "+str(loc_str), fontsize = 18, x=0.53)
+    axes = axes.flatten()
+    for i in range(0,4):
+        C_pos = Tpos[:,i]
+        F_neg = Fneg[:,i]
+        C_neg = Tneg[:,i]
+        F_pos = Fpos[:,i]
+
+        a1 =axes[i].boxplot([C_pos,F_neg,C_neg,F_pos], positions= [2,4,6,8], widths=w, patch_artist=True)
+        for bplot in (a1,):
+            for patch, color in zip(bplot['boxes'], c):
+                patch.set_facecolor(color)
+        axes[i].set_xticks(ind, ticks, fontsize = 14)
+        axes[i].set_ylabel(str(metrics[i]), fontsize = 14)
+        axes[i].tick_params(axis='both', labelsize=14)
+
+    plt.tight_layout()
+    plt.subplots_adjust(top=0.95)   
+    plt.savefig(str(save_str),bbox_inches = 'tight')
+    plt.show()
+    return ;
+
