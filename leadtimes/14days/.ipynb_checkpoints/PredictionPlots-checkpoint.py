@@ -241,14 +241,17 @@ def BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str):
         F_neg = Fneg[:,i]
         C_neg = Tneg[:,i]
         F_pos = Fpos[:,i]
-
-        a1 =axes[i].boxplot([C_pos,F_neg,C_neg,F_pos], positions= [2,4,6,8], widths=w, patch_artist=True)
-        for bplot in (a1,):
-            for patch, color in zip(bplot['boxes'], c):
-                patch.set_facecolor(color)
-        axes[i].set_xticks(ind, ticks, fontsize = 14)
-        axes[i].set_ylabel(str(metrics[i]), fontsize = 14)
+    
+        a1 = axes[i].boxplot([C_pos, F_neg, C_neg, F_pos], positions=[2,4,6,8], widths=w, patch_artist=True)
+    
+        for patch, color in zip(a1['boxes'], c):
+            patch.set_facecolor(color)
+    
+        axes[i].set_xticks(ind)
+        axes[i].set_xticklabels(ticks)
+        axes[i].set_ylabel(str(metrics[i]), fontsize=14)
         axes[i].tick_params(axis='both', labelsize=14)
+
 
     plt.tight_layout()
     plt.subplots_adjust(top=0.95)   
@@ -383,7 +386,7 @@ def GPH_vertCS(GPH_cpos,GPH_cneg,GPH_Fpos,GPH_Fneg,
                loc_str, lev, lon, save_loc):
     fs = 18
     fig, axes = plt.subplots(2, 2, figsize=(14, 16))
-    plt.suptitle("Composites of 40-80 $^o$N GPH Anomalies during 90th Percentile Confident Predictions"+str(loc_str),fontsize=21)   
+    plt.suptitle("Composites of 40-80 $^o$N GPH Anomalies during 90th Percentile Confident Predictions"+str(loc_str),fontsize=21,y = .99)   
 
     titles = ["True Positive", "True Negative", "False Positive", "False Negative",]
     ##only look below 10hPa
@@ -398,32 +401,23 @@ def GPH_vertCS(GPH_cpos,GPH_cneg,GPH_Fpos,GPH_Fneg,
 
     for i in range(0, 4):
         color = "RdBu_r"
-
         clevel = np.arange(colorbarMin, colorbarMax + colorspace, colorspace)
-        axes[i].set_title("GPH, "+str(titles[i]), fontsize=fs-1, y=0.99) 
-
-        h = axes[i].contourf(
-            lon[:180],
-            lev[5:],
-            data[i],
-            clevel,
-            cmap=color,
-            extend="both",
-        )
-        cbar = plt.colorbar(
-            h, orientation="vertical", shrink=1, fraction=0.1, pad=0.1, aspect=40
-        )
+    
+        axes[i].set_title("GPH, " + str(titles[i]), fontsize=fs-1, y=1.01)
+    
+        h = axes[i].contourf(lon[:180],lev[5:],data[i],clevel,cmap=color,extend="both",)
+    
+        cbar = fig.colorbar(h,ax=axes[i],orientation="vertical",fraction=0.046,pad=0.04)
         cbar.ax.tick_params(labelsize=fs-2)
+    
         axes[i].tick_params(labelsize=fs-2)
         axes[i].set_yscale('log')
         axes[i].invert_yaxis()
         axes[i].set_ylabel('Pressure (hPa)', fontsize=fs-3)
-        axes[i].set_yticks([10, 30, 100, 200, 300, 450, 700, 1000]) 
-        axes[i].get_yaxis().set_major_formatter(plt.ScalarFormatter()) 
-
+        axes[i].set_yticks([10, 30, 100, 200, 300, 450, 700, 1000])
+        axes[i].get_yaxis().set_major_formatter(plt.ScalarFormatter())
         axes[i].set_xlim(0, 360)
-        axes[i].set_xlabel('Longitude', fontsize=fs-3)
-
+        axes[i].set_xlabel('Longitude')
 
     plt.tight_layout()
     plt.subplots_adjust(top=0.945)
