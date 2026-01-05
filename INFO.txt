@@ -354,3 +354,10 @@ False Negative: There are 65.43% of events before January 10th and 34.57% of eve
 ####################################################
 11/12/2025
 Test for cloning repo and pushing... Hi!
+
+####################################################
+1/5/2026
+
+I cloned this repo into my Turing library.
+I needed to conduct this analysis once more using a modified dataset that AVOIDED data leakage. 
+Unfortunately, the first time I ran these models, I did not separate the training and testing datasets prior to normalizing. In addition, the PCA was conducted on the FULL data rather than just the training. I have completed redoing this analysis to account for this change... 
