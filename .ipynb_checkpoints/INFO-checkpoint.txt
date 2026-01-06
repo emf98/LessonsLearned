@@ -361,3 +361,12 @@ Test for cloning repo and pushing... Hi!
 I cloned this repo into my Turing library.
 I needed to conduct this analysis once more using a modified dataset that AVOIDED data leakage. 
 Unfortunately, the first time I ran these models, I did not separate the training and testing datasets prior to normalizing. In addition, the PCA was conducted on the FULL data rather than just the training. I have completed redoing this analysis to account for this change... 
+
+For tomorrow, I am going to have to re-run ALL lead times for the RF model. 
+AND redo the isolated RFs with select indices ...
+
+####################################################
+1/6/2026
+
+I redid the ACC plots and skill score calculations for the first LL paper. Now I need to redo the different regions and lead times ... 
+THEN, after that, the different UFS scenarios. 
