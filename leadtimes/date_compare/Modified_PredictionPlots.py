@@ -269,12 +269,14 @@ def combine_cross(GPH_cpos,GPH_cneg,vert_GPH_cpos,vert_GPH_cneg,TEMP_cpos,TEMP_c
                     linestyle = 'solid'
                     linewidth = 2.5
 
-                g_cont = ax.contour(
-                    lon, lat, data[i], levels=[level],
-                    transform=ccrs.PlateCarree(),
-                    colors=[color], linestyles=[linestyle], linewidths=[linewidth]
-                )
-                labels = ax.clabel(g_cont, inline=True, fontsize=12)
+                g_cont = ax.contour(lon, lat, data[i], levels=[level],transform=ccrs.PlateCarree(),
+                                    colors=[color], linestyles=[linestyle], linewidths=[linewidth])
+                if g_cont.collections:
+                    labels = ax.clabel(g_cont, inline=True, fontsize=12, fmt="%.0f")
+                    for text in labels:
+                        text.set_backgroundcolor("white")
+                        text.set_bbox(dict(facecolor="white", edgecolor="none", pad=.35))
+                
                 for text in labels:
                     text.set_backgroundcolor("white")
                     text.set_bbox(dict(facecolor="white", edgecolor="none", pad=.35))
@@ -285,7 +287,7 @@ def combine_cross(GPH_cpos,GPH_cneg,vert_GPH_cpos,vert_GPH_cneg,TEMP_cpos,TEMP_c
         elif i == 2 or i == 3:
             ##vertical cross section of GPH
             clevel = np.arange(colorbarMin2, colorbarMax2 + colorspace2, colorspace2)
-            ax.set_title("40-80$^o$N GPH, " + str(titles[i - 2]), fontsize=fs-1, y=0.99) 
+            ax.set_title("60-80$^o$N GPH, " + str(titles[i - 2]), fontsize=fs-1, y=0.99) 
 
             h = ax.contourf(
                 lon[:180],
@@ -357,8 +359,10 @@ def BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str):
         for bplot in (a1,):
             for patch, color in zip(bplot['boxes'], c):
                 patch.set_facecolor(color)
-        axes[i].set_xticks(ind, ticks, fontsize = 14)
-        axes[i].set_ylabel(str(metrics[i]), fontsize = 14)
+                
+        axes[i].set_xticks(ind)
+        axes[i].set_xticklabels(ticks)
+        axes[i].set_ylabel(str(metrics[i]), fontsize=14)
         axes[i].tick_params(axis='both', labelsize=14)
 
     plt.tight_layout()
