@@ -53,6 +53,11 @@ def calculate_accuracy(y_true, y_prob, threshold=0.5):
     y_pred = (y_prob >= threshold).astype(int)
     return np.mean(y_true == y_pred)
 
+##testing print avg BSS/RAS/PAS
+def F1_score(RAS,PAS):
+    F1 = np.nanmean(((2*RAS*PAS)/(RAS+PAS)))
+    return F1
+
 ##definition for RF loop with confidence evaluation
 def rf_90thpercentile(n,idx,input2,output,climo):
     print("Load in data ...")
@@ -264,29 +269,21 @@ def rf_90thpercentile(n,idx,input2,output,climo):
     print(f'Accuracy, Training: {np.mean(acc_reg2_train) * 100:.2f}%')
     print(f'Accuracy, Testing: {np.mean(acc_reg2_test) * 100:.2f}%')
     
-    ## testing print avg BSS/RAS/PAS
-    print("_____________________________________________________________________")
-    print(f"Brier Skill Score (Train): {np.nanmean(BSS_train,axis=0):.4f}")
+    #___________________________________________#
+    print("###################################################")
     print(f"Brier Skill Score (Test): {np.nanmean(BSS_test,axis=0):.4f}")
-    print(f"Brier Skill Score (Validation): {np.nanmean(BSS_val,axis=0):.4f}")
-    print("_____________________________________________________________________")
+    print("###################################################")
     print("Recall and Precision: Neg Cat")
-    print("#########")
-    print(f"Recall Accuracy Score (Train): {np.nanmean(Rec_train[:,0],axis=0):.4f}")
+    print("______________________________")
     print(f"Recall Accuracy Score (Test): {np.nanmean(Rec_test[:,0],axis=0):.4f}")
-    print(f"Recall AccuracyScore (Validation): {np.nanmean(Rec_val[:,0],axis=0):.4f}")
-    print(f"Precision Accuracy Score (Train): {np.nanmean(Prec_train[:,0],axis=0):.4f}")
     print(f"Precision Accuracy Score (Test): {np.nanmean(Prec_test[:,0],axis=0):.4f}")
-    print(f"Precision AccuracyScore (Validation): {np.nanmean(Prec_val[:,0],axis=0):.4f}")
-    print("_____________________________________________________________________")
+    print(f"F1 Score (Test): {F1_score(Rec_test[:,0],Prec_test[:,0]):.4f}")
+    print("###################################################")
     print("Recall and Precision: Pos Cat")
-    print("#########")
-    print(f"Recall Accuracy Score (Train): {np.nanmean(Rec_train[:,1],axis=0):.4f}")
+    print("______________________________")
     print(f"Recall Accuracy Score (Test): {np.nanmean(Rec_test[:,1],axis=0):.4f}")
-    print(f"Recall AccuracyScore (Validation): {np.nanmean(Rec_val[:,1],axis=0):.4f}")
     print(f"Precision Accuracy Score (Train): {np.nanmean(Prec_train[:,1],axis=0):.4f}")
-    print(f"Precision Accuracy Score (Test): {np.nanmean(Prec_test[:,1],axis=0):.4f}")
-    print(f"Precision AccuracyScore (Validation): {np.nanmean(Prec_val[:,1],axis=0):.4f}")
+    print(f"F1 Score (Test): {F1_score(Rec_test[:,1],Prec_test[:,1]):.4f}")
     
     ##correct positive
     posXtest = np.array(posXtest)
