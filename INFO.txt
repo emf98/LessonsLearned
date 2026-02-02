@@ -370,3 +370,11 @@ AND redo the isolated RFs with select indices ...
 
 I redid the ACC plots and skill score calculations for the first LL paper. Now I need to redo the different regions and lead times ... 
 THEN, after that, the different UFS scenarios. 
+
+####################################################
+2/2/2026
+
+There was a separate folder in here that is not visible. In that, I took each of the model architectures and modified the code to have the testing data run on each CV OUTSIDE of the loop ... This had absolutely 0 impact on the performance of each model. I had seen somewhere that including the test data in the CV loop creates potential for data leakage, but I am not observing this here ... I am going to proceed as normal. 
+
+I will, however, be translating the SHAP feature selection methodology to my UFS experiment now.
+
