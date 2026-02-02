@@ -1,2 +1,4 @@
 *.p
 *ellipse_lstm/tuning
+* test/
+
