@@ -234,7 +234,7 @@ def BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str):
     fs = 22
 
     fig, axes = plt.subplots(4, 1, figsize=(12, 12))
-    plt.suptitle("Distribution of RF Input Features, "+str(loc_str), fontsize = 22, x=0.53)
+    #plt.suptitle("Distribution of RF Input Features, "+str(loc_str), fontsize = 22, x=0.53)
     axes = axes.flatten()
     for i in range(0,4):
         C_pos = Tpos[:,i]
@@ -249,9 +249,9 @@ def BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str):
     
         axes[i].set_xticks(ind)
         axes[i].set_xticklabels(ticks)
-        axes[i].set_ylabel(str(metrics[i]), fontsize=18)
-        axes[i].tick_params(axis='both', labelsize=18)
-
+        axes[i].set_ylabel(str(metrics[i]), fontsize=22, fontweight = 'bold')
+        axes[i].yaxis.set_label_coords(-0.1, 0.5)
+        axes[i].tick_params(axis='both', labelsize=22)
 
     plt.tight_layout()
     plt.subplots_adjust(top=0.95)   
