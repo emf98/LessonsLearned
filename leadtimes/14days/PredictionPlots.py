@@ -250,9 +250,9 @@ def BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str):
         axes[i].set_xticks(ind)
         axes[i].set_xticklabels(ticks)
         #axes[i].set_ylabel(str(metrics[i]), fontsize=22, fontweight = 'bold')
-        axes[i].set_ylabel(str(metrics[i]), fontsize=18)
+        axes[i].set_ylabel(str(metrics[i]), fontsize=16)
         axes[i].yaxis.set_label_coords(-0.1, 0.5)
-        axes[i].tick_params(axis='both', labelsize=18)
+        axes[i].tick_params(axis='both', labelsize=16)
 
     plt.tight_layout()
     plt.subplots_adjust(top=0.95)   
