@@ -231,7 +231,7 @@ def BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str):
     ind = [2, 4, 6, 8]  # the x locations for the groups
     w = 0.25 #box-plot width
     c = ["midnightblue","royalblue","mediumvioletred","magenta"]
-    fs = 22
+    fs = 20
 
     fig, axes = plt.subplots(4, 1, figsize=(12, 12))
     #plt.suptitle("Distribution of RF Input Features, "+str(loc_str), fontsize = 22, x=0.53)
@@ -250,9 +250,9 @@ def BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str):
         axes[i].set_xticks(ind)
         axes[i].set_xticklabels(ticks)
         #axes[i].set_ylabel(str(metrics[i]), fontsize=22, fontweight = 'bold')
-        axes[i].set_ylabel(str(metrics[i]), fontsize=22)
+        axes[i].set_ylabel(str(metrics[i]), fontsize=18)
         axes[i].yaxis.set_label_coords(-0.1, 0.5)
-        axes[i].tick_params(axis='both', labelsize=22)
+        axes[i].tick_params(axis='both', labelsize=18)
 
     plt.tight_layout()
     plt.subplots_adjust(top=0.95)   
@@ -387,7 +387,7 @@ def GPH_vertCS(GPH_cpos,GPH_cneg,GPH_Fpos,GPH_Fneg,
                loc_str, lev, lon, save_loc):
     fs = 18
     fig, axes = plt.subplots(2, 2, figsize=(14, 16))
-    plt.suptitle("Composites of 40-80 $^o$N GPH Anomalies during 90th Percentile Confident Predictions"+str(loc_str),fontsize=21,y = .99)   
+    plt.suptitle("Composites of 60-75 $^o$N GPH Anomalies during 90th Percentile Confident Predictions"+str(loc_str),fontsize=21,y = .99)   
 
     titles = ["True Positive", "True Negative", "False Positive", "False Negative",]
     ##only look below 10hPa
