@@ -344,26 +344,28 @@ def BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str):
     ind = [2, 4, 6, 8]  # the x locations for the groups
     w = 0.25 #box-plot width
     c = ["midnightblue","royalblue","mediumvioletred","magenta"]
-    fs = 14
+    fs = 20
 
     fig, axes = plt.subplots(4, 1, figsize=(12, 12))
-    plt.suptitle("Distribution of RF Input Features, "+str(loc_str), fontsize = 18, x=0.53)
+    #plt.suptitle("Distribution of RF Input Features, "+str(loc_str), fontsize = 22, x=0.53)
     axes = axes.flatten()
     for i in range(0,4):
         C_pos = Tpos[:,i]
         F_neg = Fneg[:,i]
         C_neg = Tneg[:,i]
         F_pos = Fpos[:,i]
-
-        a1 =axes[i].boxplot([C_pos,F_neg,C_neg,F_pos], positions= [2,4,6,8], widths=w, patch_artist=True)
-        for bplot in (a1,):
-            for patch, color in zip(bplot['boxes'], c):
-                patch.set_facecolor(color)
-                
+    
+        a1 = axes[i].boxplot([C_pos, F_neg, C_neg, F_pos], positions=[2,4,6,8], widths=w, patch_artist=True)
+    
+        for patch, color in zip(a1['boxes'], c):
+            patch.set_facecolor(color)
+    
         axes[i].set_xticks(ind)
         axes[i].set_xticklabels(ticks)
-        axes[i].set_ylabel(str(metrics[i]), fontsize=14)
-        axes[i].tick_params(axis='both', labelsize=14)
+        #axes[i].set_ylabel(str(metrics[i]), fontsize=22, fontweight = 'bold')
+        axes[i].set_ylabel(str(metrics[i]), fontsize=16)
+        axes[i].yaxis.set_label_coords(-0.1, 0.5)
+        axes[i].tick_params(axis='both', labelsize=16)
 
     plt.tight_layout()
     plt.subplots_adjust(top=0.95)   
