@@ -59,7 +59,7 @@ def F1_score(RAS,PAS):
     return F1
 
 ##definition for RF loop with confidence evaluation
-def rf_90thpercentile(n,idx,input2,output,climo):
+def rf_90thpercentile(n,idx,input2,output,climo,column_names):
     print("Load in data ...")
     X_train = input2.iloc[:(52*idx),:]
     X_test = input2.iloc[(52*idx):,:]
@@ -311,8 +311,17 @@ def rf_90thpercentile(n,idx,input2,output,climo):
     import shap
     
     explainer = shap.TreeExplainer(rf_reg2)
-    shap_values = explainer.shap_values(X_test)
-    shap_obj = explainer(X_test) ##return this value to plot. 
+    #shap_values = explainer.shap_values(X_test)
+    #shap_obj = explainer(X_test) ##return this value to plot. 
+    ##90th percentile ...
+    X_test = input2.iloc[(52*idx):,:]
+    X_test90 = [X_test.iloc[i,:] for i in great90]
+    #convert the list to a pandas DataFrame (adjust column names as needed)
+    X_test90_df = pd.DataFrame(X_test90, columns= column_names)
+    
+    shap_values = explainer.shap_values(X_test90_df)
+    shap_obj = explainer(X_test90_df)
+
     print("Done.")
     return test90_acc, fulltest_acc, shap_obj, posXtest, FposXtest, negXtest, FnegXtest;
 
