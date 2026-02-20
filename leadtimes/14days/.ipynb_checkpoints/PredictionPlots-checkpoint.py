@@ -256,7 +256,7 @@ def BWplot(Tpos,Tneg,Fpos,Fneg,metrics_list,loc_str,save_str):
 
     plt.tight_layout()
     plt.subplots_adjust(top=0.95)   
-    plt.savefig(str(save_str),bbox_inches = 'tight')
+    #plt.savefig(str(save_str),bbox_inches = 'tight')
     plt.show()
     return ;
 
