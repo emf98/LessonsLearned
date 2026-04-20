@@ -218,8 +218,9 @@ def BWplot(Tpos_all, Tneg_all, Fpos_all, Fneg_all, metrics_list, loc_str, save_s
         
         axes[m].set_xticks(base_positions)
         axes[m].set_xticklabels(ticks)
-        axes[m].set_ylabel(metrics_list[m], fontsize=16)
-        axes[m].tick_params(axis='both', labelsize=14)
+        axes[m].set_ylabel(metrics_list[m], fontsize=20)
+        axes[m].yaxis.set_label_coords(-0.08, 0.5)
+        axes[m].tick_params(axis='both', labelsize=17)
     
     # legend for lead shading
     #for l in range(n_leads):
